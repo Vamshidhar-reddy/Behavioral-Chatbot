@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/main.css" />
+
+</head>
+
+<body style="background-color:#006747">
+    <div class="container" style="height:100vh;width:100%; ">
+        <div class="row" style="height:5vh; background-color:#CFC493">
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#bgStorySetupModal" style="background-color:#4CAF50">Task Information</button>
+            <button id="infoClueButton" type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#infoClue" style="background-color:#4CAF50;padding-left:10px;margin-left:10px;display:none">Project Assignment Information</button>
+        </div>
+        <div class="row" style="height:90vh;background-color:white">
+            <div class="column" style=" width: 54%;overflow: auto;background-color:white;border-radius:10px;border-right:20px !important">
+                <div id="clickableGrid" style="display:none">
+                    <div>
+                        <p style="font-size:15px !important">
+                            Use this grid to note which combinations have been eliminated or selected.
+                            Click the box once to place an <img src='../static/images/cross.png' alt='Avatar' style='width:12px;' />. Click the same box again to place an <img src='../static/images/circle.png' alt='Avatar' style='width:12px;' />.  Click the same box a third time to remove the <img src='../static/images/circle.png' alt='Avatar' style='width:12px;' />.
+                        </p>
+                    </div>
+
+                    <table id="demoTable" class="table  table-sm" style="height:75%; max-height:75%;display:none">
+                        <thead>
+                            <tr>
+                                <th class="border" colspan="2" rowspan="2"></th>
+                                <th class="border" colspan="4" align="center"><div style="font-size: 12px;text-align:center">Name</div></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border" colspan="2"></td>
+
+                                <td class="border"><div class="vertical">James</div></td>
+                                <td class="border"><div class="vertical">Louise</div></td>
+                                <td class="border"><div class="vertical">Ali</div></td>
+                                <td class="border"><div class="vertical">Maya</div></td>
+                            </tr>
+                            <tr>
+                                <td class="border" rowspan="3"><div style="font-size: 12px;text-align:center;writing-mode: vertical-rl;transform: rotate(180deg);font-weight: bold;height: 140px; margin:auto">Gift</div></td>
+                                <td class="border"><div class="horizontal">Necklace</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">Skateboard</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">Videogame</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <table id="mainTable" style="display:none" class="table  table-sm" style="height:75%; max-height:75%">
+                        <thead>
+                            <tr>
+                                <th class="border" colspan="2" rowspan="2"></th>
+                                <th class="border" colspan="4" align="center"><div style="font-size: 12px;text-align:center">Role</div></th>
+                                <th class="border" colspan="4" align="center"><div style="font-size: 12px;text-align:center">Candidate</div></th>
+                            </tr>
+                        </thead>
+                        <tbody id="mainTableBody">
+                            <tr>
+                                <td class="border" colspan="2"></td>
+
+                                <td class="border"><div class="vertical ">Network Architect</div></td>
+                                <td class="border"><div class="vertical ">Systems Analyst</div></td>
+                                <td class="border"><div class="vertical ">Cyber Security Specalist</div></td>
+                                <td class="border"><div class="vertical ">Database Administrator</div></td>
+
+                                <td class="border"><div class="vertical">Alex</div></td>
+                                <td class="border"><div class="vertical">Leon</div></td>
+                                <td class="border"><div class="vertical">Rachel</div></td>
+                                <td class="border"><div class="vertical">Tina</div></td>
+                            </tr>
+                            <tr>
+                                <td class="border" rowspan="4"><div style="font-size: 12px;text-align:center;writing-mode: vertical-rl;transform: rotate(180deg);font-weight: bold;height: 140px; margin:auto">Number of Hours</div></td>
+                                <td class="border"><div class="horizontal">6</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">8</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">10</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">12</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                            </tr>
+                            <tr>
+                                <td class="border" rowspan="4">
+                                    <div class="vertical" style="font-size: 12px;text-align:center;writing-mode: vertical-rl;transform: rotate(180deg);font-weight: bold;height: 140px; margin:auto">Candidate</div>
+                                </td>
+                                <td class="border"><div class="horizontal">Alex</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">Leon</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">Rachel</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                            </tr>
+                            <tr>
+                                <td class="border"><div class="horizontal">Tina</div></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td class="click"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                                <td style="border-top: 1px solid #ffffff !important"></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="column" style="width: 46%;border:solid #CFC493 3px;border-top:0px !important; height: 93vh;background-color:white; border-bottom-left-radius:10px">
+                <div id="chatDiv" style="height:80vh;overflow:auto">
+
+                </div>
+
+
+                <div>
+                    <div class="form-group row" style="">
+                        <div class="col-lg-10">
+                            <input class="form-control inputBar" id="userMessage" type="text" placeholder="Type your name here . . .">
+                            <button class="submit-button" id="submitButton">Submit</button>
+                        </div>
+                        <div class="col-lg-2" style="float:right">
+                            <button class="next-button" id="nextButton">Next ❯</button>
+                        </div>
+                    </div>
+                    <input hidden id="sessionId">
+                    <input hidden id="condition">
+                    <input hidden id="topic">
+                    <input hidden id="index">
+                    <input hidden id="userInputType">
+                    <input hidden id="userName">
+                    <input hidden id="response">
+                    <input hidden id="timeTaken">
+                    <input hidden id="clueStartTimestamp">
+                    <input hidden id="gridAction">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="bgStorySetupModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="display:block !important">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Overall Task Description</h4>
+                </div>
+                <div class="modal-body">
+
+                    <p>
+                        <u>Background Story:</u> Teams are often a preferred choice to complete complex projects. The success of such teams depends on the right combination of factors such as team member personalities, roles, location where the teams meet, and how long they work among other things. Therefore, it is critical for project managers and hiring managers to consider these issues while hiring. However, since there is a lot of complex information that needs to be processed, it is difficult for one person to consider all issues and make the right choice on their own. To resolve this challenge, organizations are utilizing artificial intelligence (AI) chat bots to provide them with relevant information and helping them process this information in order to make effective decisions.
+                        <br />
+                        In this scenario, you will work with one such AI chat bots, which will help you determine the composition of a project team. In this task, a chat bot will provide you with relevant information needed to make a decision regarding the team composition. Using AI, the chat bot will adapt to your needs and respond to requests you make for more information. With the assistance of the AI chat bot, your task is to decide each candidate’s role in the project and how many hours they will need to work on the project every week.
+                        <br />
+
+
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="infoClue" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="display:block !important">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Project Assignment Information</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div >
+                        <p>1. The Systems Analyst works for 4 hours more than the Database Administrator.</p>
+                        <p>2. The candidate that works for 12 hours is either Tina or the Database Administrator.</p>
+                        <p>3. Leon works for more hours than the Network Architect.</p>
+                        <p>4. Rachel works for fewer hours than Alex.</p>
+                        <p>5. The Network Architect is either Tina or Alex.</p>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button  type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../static/main.js"></script>
+</body>
+
+<!--<div class="bot_msg_div">
+    <div class="bot_msg_img">
+        <img src="../static/images/bot.png"
+             alt="Avatar" style="width:100%;">
+    </div>
+    <div class="bot_msg_main_div">
+        <div class="bot_msg_inner_div">
+            <p>
+                Test which is a new approach to have all
+                solutions
+            </p>
+            <span class="time_date"> 11:01 AM    |    June 9</span>
+        </div>
+    </div>
+</div>
+<div class="user_msg_div">
+    <div class="user_msg_img">
+        <img src="../static/images/user.png"
+             alt="Avatar" style="width:100%;">
+    </div>
+    <div class="user_msg_main_div">
+        <p>
+            Test which is a new approach to have all
+            solutions
+        </p>
+        <span class="time_date"> 11:01 AM    |    June 9</span>
+    </div>
+</div>-->
+
+</html>

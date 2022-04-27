@@ -1,0 +1,104 @@
+{
+  "main": {
+    "1": {
+      "clue": "The Systems Analyst works for 4 hours more than the Database Administrator."
+    },
+    "2": {
+      "clue": "The candidate that works for 12 hours is either Tina or the Database Administrator."
+    },
+    "3": {
+      "clue": "Leon works for more hours than the Network Architect."
+    },
+    "4": {
+      "clue": "Rachel works for fewer hours than Alex."
+    },
+    "5": {
+      "clue": "The Network Architect is either Tina or Alex."
+    }
+  },
+  "redundant": {
+    "1": {
+      "clue": "Alex does not work for 6 hours a week."
+    },
+    "2": {
+      "clue": "Alex should be assigned as the Network Architect."
+    },
+    "3": {
+      "clue": "Leon does not work for 6 hours a week."
+    },
+    "4": {
+      "clue": "Leon does not work for 8 hours a week."
+    },
+    "5": {
+      "clue": "Rachel does not work for 12 hours a week."
+    },
+    "6": {
+      "clue": "Rachel should be assigned as the Database Administrator."
+    },
+    "7": {
+      "clue": "Rachel should not be assigned as the Systems Analyst."
+    },
+    "8": {
+      "clue": "Tina is the Cybersecurity Specialist."
+    },
+    "9": {
+      "clue": "Tina should not be assigned as the Database Administrator."
+    },
+    "10": {
+      "clue": "The Cybersecurity Specialist works for 12 hours a week."
+    },
+    "11": {
+      "clue": "The Database Administrator does not work for 10 hours a week."
+    },
+    "12": {
+      "clue": "The Database Administrator does not work for 12 hours a week."
+    },
+    "13": {
+      "clue": "The Network Architect does not work for 10 hours a week."
+    },
+    "14": {
+      "clue": "The Network Architect is not Leon."
+    },
+    "15": {
+      "clue": "The Network Architect is not Rachel."
+    },
+    "16": {
+      "clue": "The Systems Analyst does not work for 6 hours a week."
+    },
+    "17": {
+      "clue": "The Systems Analyst does not work for 8 hours a week."
+    },
+    "18": {
+      "clue": "The Systems Analyst is Leon."
+    },
+    "19": {
+      "clue": "6 hours a week of work is not required of the Network Architect."
+    },
+    "20": {
+      "clue": "6 hours a week of work is required of the Database administrator."
+    },
+    "21": {
+      "clue": "6 hours a week of work is required of Tina."
+    },
+    "22": {
+      "clue": "8 hours a week of work is required of Alex."
+    },
+    "23": {
+      "clue": "8 hours a week of work is required of the Network Architect."
+    },
+    "24": {
+      "clue": "10 hours a week of work is required of Leon."
+    },
+    "25": {
+      "clue": "10 hours a week of work is required of the Systems Analyst."
+    },
+    "26": {
+      "clue": "12 hours a week of work is required of the Network Architect."
+    },
+    "27": {
+      "clue": "12 hours a week of work is required of Tina."
+    }
+
+  }
+
+}
